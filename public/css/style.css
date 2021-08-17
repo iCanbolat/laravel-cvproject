@@ -1,0 +1,110 @@
+#003777
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+
+.dropdown-menu{
+    border-color: #003777;
+}
+.dropdown-item:hover{
+    background-color: #fff;
+}
+.nav-link::after,.dropdown-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #003777;
+    transition: width .3s;
+}
+.nav-link:hover::after,.dropdown-item:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+.btn:hover{
+    background-color: #003777;
+}
+.btn{
+    color: #003777;
+    border-color: #003777;
+}
+.employee{
+    position: relative;
+}
+.employee::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 36%;
+    padding-left: 10%;
+    left: 32%;
+    height: 2px;
+    background: #003777;
+    transition: width .3s;
+}
+ 
+ 
+.style{
+    border :none ;
+    border-bottom: 2px solid #003777; 
+}
+.style:focus{
+    border :none ;
+    border-bottom: 2px solid #003777;
+}
+@media  screen  and (min-width: 768px) {
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+ 
+  }}
+.card li{
+    background-color: #003777;
+}
+#card{
+    border-color: #003777;
+    font-weight: bold ;
+    -webkit-box-shadow: 22px 17px 33px -3px rgba(0,0,0,0.68); 
+    box-shadow: 22px 17px 33px -3px rgba(0,0,0,0.68);
+}
+.details{
+    position: fixed;
+    right: 0 ;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.details-view{
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.list-group-item{
+    border:0;  
+    margin-bottom: 10%;
+    text-align: center;
+    background-color: #003777; 
+    color: #fff;
+    font-weight: bold;
+}
+.list-group-item:hover{
+    transform: scale(1.2);
+    background-color: #003777;
+    color: #fff;
+}
+.views{
+    position: relative;
+}
+.views::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 36%;
+    padding-left: 10%;
+    left: 32%;
+    height: 2px;
+    background: #003777;
+    transition: width .3s;
+}
