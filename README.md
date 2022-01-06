@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.ibb.co/7yt0zPP/Laravel-Opera-6-01-2022-19-45-46.png" width="800"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.hizliresim.com/3zzr7n9" width="800"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
