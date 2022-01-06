@@ -36,7 +36,7 @@
             <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
             @auth
-                <a class="nav-link " href="{{ url('/home') }}" style="font-size:large;font-weight:bold">
+                <a class="nav-link " href="{{Auth::user()->role_id ==1 ? route('employer') : route('employee') }}" style="font-size:large;font-weight:bold">
                 <i style="color: #003777;" class="icofont-home px-1"></i> Home</a>
             @else
                 <a class="nav-link " href="{{ route('login') }}" style="font-size:large;font-weight:bold">
@@ -136,6 +136,10 @@
              var url = URL.createObjectURL(event.target.files[0]);
              $('#company-img').attr("src" , url);
          })
+         $('#profile-image').change(function(event){
+             var url = URL.createObjectURL(event.target.files[0]);
+             $('#profile-img').attr("src" , url);
+         })
 
          $('#companyname').on("input", function(){
                 var word = $(this).val()
@@ -160,48 +164,9 @@
         $('#exampleFormControlSelect2').on('change', function() {
             $('#sector').text(this.value);
             });
-    
             
-
-
-
-
-         var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-});
             
+         
          
 
         </script>

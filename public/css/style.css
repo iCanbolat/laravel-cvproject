@@ -2,7 +2,9 @@
 body{
     font-family: "Open Sans", sans-serif;
 }
-
+main{
+    min-height: 60vh;
+}
 
 .dropdown-menu{
     border-color: #003777;
@@ -55,7 +57,7 @@ body{
 }
 @media  screen  and (min-width: 768px) {
 .footer {
-    position: fixed;
+    margin-top: 17vh;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -107,4 +109,19 @@ body{
     height: 2px;
     background: #003777;
     transition: width .3s;
+}
+.apply:hover{
+    background-color: #003777;
+}
+.apply:hover button{
+    color: #FFF;
+}
+.apply button{
+    color: #003777;
+    font-weight: bolder;
+}
+.apply{
+    color: #003777;
+    background-color: #FFF;
+    border: 2px solid #003777
 }

@@ -66,15 +66,15 @@
                     >PROFESSIONAL EMPLOYEE-EMPLOYER ZONE
                     </h5>
 
-                    <button type="button"
+                    <a type="button" href="{{ route('employee.guest') }}"
+                    class="btn btn-outline-primary py-2 px-5 my-2" 
+                    >Search for Jobs  <i class="icofont-hand-drawn-right pl-2"></i>
+                    </a><br>
+                    
+                    <a type="button" href="{{ route('employer.guest') }}"
                     class="btn btn-outline-primary py-2 px-5 my-2" 
                     >Search for employee  <i class="icofont-hand-drawn-right pl-2"></i>
-                    </button><br>
-                    
-                    <button type="button"
-                    class="btn btn-outline-primary py-2 px-5 my-2" 
-                    >Search for employer  <i class="icofont-hand-drawn-right pl-2"></i>
-                    </button>
+                    </a>
                 </div>
 
             </div>

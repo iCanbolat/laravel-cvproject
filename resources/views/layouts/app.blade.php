@@ -22,6 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 </head>
 <body >
     <div id="app">
@@ -51,18 +52,17 @@
             @endif
             @else
             </li>
+ 
+            
 
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" style="font-weight: bold;color:black" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                    {{ Auth::user()->name }} <i class="icofont-simple-down"></i>
-                </a>
-
-
-                
+                </a>             
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url('profile') }}">
-                        {{ __('Profile') }}
+                <a class="dropdown-item" href="{{Auth::user()->role_id ==1 ? url('eProfile') : url('profile') }}">
+                        {{ __('Profile') }} 
                     </a>
 
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -87,8 +87,8 @@
             @yield('content')
         </main>
     </div>
-    <footer class="footer" >
-        <div class="container-fluid mt-sm-5" style="background-color: #003777;">
+    <footer class=" footer  " >
+        <div class="container-fluid mt-sm-5 " style="background-color: #003777;height:auto">
             <div class="row py-2"  >
                 <div class="col-lg-12 my-auto">
                     <div class="text-center">
@@ -101,15 +101,108 @@
             </div>
         </div>
     </footer>
+    <style>
+        
+    </style>
     <script src="{{ asset('js/app.js') }}"  ></script>
+    <script src="{{ asset('js/vanilla-tilt.js') }}"  ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"  ></script>
 
 
     <script>
+        
+        $('#location , #sector').on('change',function(){
+             var location = $('#location').val();
+             var sector = $('#sector').val();
+             
+            $.ajax({
+                url:'search',
+                type:'GET',
+                data:{
+                    'location':location,
+                    'sector':sector,
+                },
+                success:function(data){
+                    $('#content').html(data);
+                }
+            })
+        }) ;
+        
+        $('#e_location , #e_sector').on('change',function(){
+             var location = $('#e_location').val();
+             var sector = $('#e_sector').val();
+             
+            $.ajax({
+                url:'search-employee',
+                type:'GET',
+                data:{
+                    'location':location,
+                    'sector':sector,
+                },
+                success:function(data){
+                    $('#contentt').html(data);
+                }
+            })
+        }) ;
+        $('#apply').on('click',function(){
+             var id = $(this).parents('.details').attr('id');
+            
+            $.ajax({
+                url:'home',
+                headers:{'X-CSRF-TOKEN':'{{csrf_token()}}'},
+                type:'POST',
+                data:{
+                    'id':id,
+                },
+                success:function(data){
+                    toastr.success("Applied Successfully !");
+                }
+            })
+            
+        }) ;
+
+        $('#downloadcv').on('click',function(){
+            var id = $(this).children('.a').attr('id');
+        
+        $.ajax({
+            url:'/eHome',
+            headers:{'X-CSRF-TOKEN':'{{csrf_token()}}'},
+            type:'POST',
+            data:{
+                'id':id,
+            },
+            success:function(data){
+                toastr.success("Downloading ...");
+            }
+        })
+        
+    }) ;   
+
     $(document).ready(function() {
 
-        $('#item').click(function(){
+        $('#content').on('click', '.item', (function(){
+        
             $('.details').toggleClass('details-view');
-        });
+            var id = $(this).attr('id');
+            var image = $(this).children().children().children('.resim').attr('src');
+            var name = $(this).children().children().children().children('h4').text();
+            var title = $(this).children().children().children().children('h5').text();
+            var description = $(this).children().children().children().children('p').text();
+            var sector = $(this).children().children().children().children().children().children('.sector').text();
+            var location = $(this).children().children().children().children().children().children('.location').text();
+
+
+            $('.isim').text(name);
+            $('.details').attr('id', id);
+            $('.resimm').attr('src', image);
+            $('.title').text(title);
+            $('.description').text(description);
+            $('.sectorr').text(sector);
+            $('.locationn').text(location);
+            console.log(id)
+ 
+
+        }));
 
         $('.closee').click(function(){
             $('.details').removeClass('details-view')
@@ -117,7 +210,9 @@
         
         $("#role_id").prop('checked', false , function(){
             $(this).val('1')
-        });
+        });  
+
+ 
 
 
 });

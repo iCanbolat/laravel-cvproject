@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container  "  >
     <div class="row justify-content-center">
 
@@ -79,7 +80,7 @@
                             <div class="row">
                                 <div class="col-sm"><div class="rounded-pill text-white text-center py-2 sector " style="background-color: #003777;"> {{$post->sector}}</div></div>
                                 <div class="col-sm"><div class="rounded-pill text-white text-center py-2 location " style="background-color: #003777;"> {{$post->location}}</div></div>
-                                <div class="col-sm"><div class="rounded-pill text-white text-center py-2  " style="background-color: #003777;"> Apply Now!</div></div>
+                                <a href="{{ route('login') }}" class="col-sm"><div class="rounded-pill text-white text-center py-2  " style="background-color: #003777;"> Apply Now!</div></a>
                             </div>
                         </div>
                         </div>
@@ -118,26 +119,16 @@
                                          class="border-0 bg-transparent "
                                          type="submit">Apply Now ! 
                                     </button>
-                         
-                                   
                                 </div>
                             </div>
                             </div>
                         </div>
                         </div>
-                    </div>
-                     
+                    </div>                    
                </div>
             </div>
-        </div>
-      
-
-
-        
-    </div>
+        </div>   
+      </div>
     </div>
 </div>
-    <script>
-     
-    </script>
 @endsection

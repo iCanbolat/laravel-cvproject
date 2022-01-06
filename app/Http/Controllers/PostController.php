@@ -17,8 +17,10 @@ class PostController extends Controller
     {
         $user_id = Auth::id();
         $myPosts = Post::where('user_id',$user_id)->get();
+        $employees =  Post::where('user_id', $user_id)->with('people')->get();
 
-        return view('profile',compact('myPosts'));
+        return view('eProfile' , compact('employees' , 'myPosts'));
+     
     }
 
     /**

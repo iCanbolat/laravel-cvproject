@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Applies;
+use Illuminate\Support\Facades\App;
 
 class Post extends Model
 {
@@ -19,4 +21,8 @@ class Post extends Model
         'location',
         'sector',
     ];
+    public function people()
+    {
+       return $this->belongsToMany(Info::class , 'applies', 'user_id' , 'posts_id');
+    }
 }
