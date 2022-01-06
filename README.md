@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.hizliresim.com/3zzr7n9.png" width="700"></a></p>
+<p align="center"><a href="https://ibb.co/RCJxQSS" target="_blank"><img src="https://i.hizliresim.com/3zzr7n9.png" width="600"></a></p>
 
 <hr></hr>
 
