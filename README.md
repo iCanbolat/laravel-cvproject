@@ -4,9 +4,9 @@
 
 ## About App
 
-A site which you can apply jobs or search for employees with cool functionalities.
+<h4>An App which you can apply jobs or search for employees with cool functionalities.</h4>
 
-<h2 align="center">Some Pics from app </h2>
+<h2 align="center">Some Pics of App </h2>
 <h5 align="center">Click Image to Zoom in</h5>
 
 <h4>Sign In & Up</h4>
@@ -26,3 +26,5 @@ A site which you can apply jobs or search for employees with cool functionalitie
     <a href="https://ibb.co/x6LVSkg" target="_blank"><img src="https://i.ibb.co/qpjbMSg/Laravel-Opera-6-01-2022-19-45-15.png" width="500"> </a>
     <a href="https://ibb.co/x5qrsWW" target="_blank"><img src="https://i.ibb.co/7yt0zPP/Laravel-Opera-6-01-2022-19-45-46.png" width="500"></a>
 </p><hr></hr>
+
+
