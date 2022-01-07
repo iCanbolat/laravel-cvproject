@@ -5,6 +5,7 @@
 ## About App
 
 <h4>An App which you can apply jobs or search for employees with cool functionalities.</h4>
+<h5>Tech -> Bootstrap 4 , jQuery Ajax , Laravel , mySQL.</h5>
 
 <h2 align="center">Some Pics of App </h2>
 <h5 align="center">Click Image to Zoom in</h5>
